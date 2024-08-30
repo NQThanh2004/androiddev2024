@@ -1,27 +1,23 @@
 package vn.edu.usth.usthweather;
 
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.util.Log;
-import android.view.View;
-
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
-import vn.edu.usthweather.databinding.ActivityWeatherBinding;
+import vn.edu.usthweather.R;
 
 public class WeatherActivity extends AppCompatActivity {
-    private static String TAG = "WeatherActivity";
+    private static final String TAG = "WeatherActivity";
 
     @Override
-    protected void onCreate(Bundle saveInstanceState){
-        super.onCreate(saveInstanceState);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // Create a new Fragment to be placed in the activity DetailFragment firstFragment = new DetailFragment();
+        ForecastFragment forecastFragment = new ForecastFragment();
+        // Add the fragment to the 'container' FrameLayout
+        getSupportFragmentManager().beginTransaction().add(
+                R.id.fab, forecastFragment).commit();
+
+        Log.i(TAG, "Create");
     }
 
     protected void onStart(){
