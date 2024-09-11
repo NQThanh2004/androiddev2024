@@ -1,9 +1,11 @@
-package vn.edu.usth.usthweather;
+package vn.edu.usthweather;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
+
 import vn.edu.usthweather.R;
+
 
 public class WeatherActivity extends AppCompatActivity {
     private static final String TAG = "WeatherActivity";

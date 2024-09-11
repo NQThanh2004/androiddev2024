@@ -1,5 +1,6 @@
-package vn.edu.usth.usthweather;
+package vn.edu.usthweather;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -8,8 +9,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import vn.edu.usthweather.R;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,12 +60,31 @@ public class ForecastFragment extends Fragment {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_forecast, container, false);
-        view.setBackgroundColor(Color.parseColor("#20FF0000"));
-        return view;
+//        View view = new View(getContext());
+//        view.setBackgroundColor(Color.parseColor("#20FF0000"));
+//
+//        LinearLayout layout = new LinearLayout(getContext());
+//        layout.setOrientation(LinearLayout.VERTICAL);
+//
+//        ImageView imageview = new ImageView(getContext());
+//        TextView textview = new TextView(getContext());
+//
+//        textview.setText("Thursday");
+//        textview.setTextColor(Color.BLACK);
+//
+//        imageview.setImageResource(R.drawable.image_set);
+////        imageview.setImageResource(R.drawable.sun);
+////        imageview.setImageResource(R.drawable.snowflake);
+////        imageview.setImageResource(R.drawable.cloudy);
+//
+//        layout.addView(textview);
+//        layout.addView(imageview);
+//        return layout;
+        return inflater.inflate(R.layout.fragment_forecast, container, false);
     }
 }
