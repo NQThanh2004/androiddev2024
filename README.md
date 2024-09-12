@@ -12,5 +12,5 @@ Student Info
 
 * Name: Nguyen Quoc Thanh 
 * ID: 22BI13410
-* Group ID: 14
+* Group ID: 13
 * Project Name: Facebook client 
