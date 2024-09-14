@@ -1,49 +1,80 @@
 package vn.edu.usthweather;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 
-import vn.edu.usthweather.R;
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager2.widget.ViewPager2;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 
 public class WeatherActivity extends AppCompatActivity {
-    private static final String TAG = "WeatherActivity";
-
+    private static final String TAG = "Weather";
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Create a new Fragment to be placed in the activity DetailFragment firstFragment = new DetailFragment();
-        ForecastFragment forecastFragment = new ForecastFragment();
-        // Add the fragment to the 'container' FrameLayout
-        getSupportFragmentManager().beginTransaction().add(
-                R.id.fab, forecastFragment).commit();
-
+//        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_weather);
+//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+//            return insets;
+//        });
         Log.i(TAG, "Create");
+
+        HomeFragmentPagerAdapter adapter = new HomeFragmentPagerAdapter(this);
+        ViewPager2 viewPager2 = findViewById(R.id.view_pager);
+        viewPager2.setOffscreenPageLimit(3);
+        viewPager2.setAdapter(adapter);
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
+        new TabLayoutMediator(tabLayout, viewPager2, (tab, position) -> {
+            tab.setText(adapter.getPageTitle(position));
+        }).attach();
+
+//        ForecastFragment firstFragment = new ForecastFragment();
+//
+//        getSupportFragmentManager().beginTransaction().replace(R.id.main, firstFragment).commit();
     }
 
-    protected void onStart(){
+    @Override
+    protected void onStart()
+    {
         super.onStart();
-        Log.i(TAG,"Start");
+        Log.i(TAG, "Start");
     }
 
-    protected void onResume(){
+    @Override
+    protected void onResume()
+    {
         super.onResume();
-        Log.i(TAG,"Resume");
+        Log.i(TAG, "Resume");
     }
 
-    protected void onPause(){
+    @Override
+    protected void onPause()
+    {
         super.onPause();
-        Log.i(TAG,"Pause");
+        Log.i(TAG, "Pause");
     }
 
-    protected void onStop(){
+    @Override
+    protected void onStop() {
         super.onStop();
-        Log.i(TAG,"Stop");
+        Log.i(TAG, "Stop");
     }
 
-    protected void onDestroy(){
+    @Override
+    protected void onDestroy()
+    {
         super.onDestroy();
-        Log.i(TAG,"Destroy");
+        Log.i(TAG, "Destroy");
     }
 }

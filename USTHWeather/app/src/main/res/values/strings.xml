@@ -11,7 +11,7 @@
     <string name="tuesday">Tuesday\n</string>
     <string name="wednesday">Wednesday</string>
     <string name="friday">Friday\n</string>
-    <string name="saturday">Saturaday\n</string>
+    <string name="saturday">Saturday\n</string>
     <string name="sunday">Sunday</string>
     <string name="cloudy">Cloudy</string>
     <string name="cloudy_temp">Cloudy\n26C-30C</string>
@@ -20,7 +20,7 @@
     <string name="thunder">thunder</string>
     <string name="thunder_temp">Thunder(Dangerous)\n25C-26C</string>
     <string name="snow">snow</string>
-    <string name="snow_temp">Snow(very cold)\n-12C--1C</string>
+    <string name="snow_temp">Snow(very cold)\n-12C—1C</string>
     <string name="typhoon_temp">Typhoon(Dangerous)\n23C-28C</string>
     <string name="typhoon">typhoon\n</string>
     <string name="windy">windy\n</string>
