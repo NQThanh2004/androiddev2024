@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">USTH Thời Tiết </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="USTH_Weather">USTH_Weather\n</string>
+    <string name="thursday">Thứ năm</string>
+    <string name="Thursday">Thứ Năm\n</string>
+    <string name="Weather_temp">Weather_temp\n</string>
+    <string name="Monday">Thứ Hai\n</string>
+    <string name="rain_temp">Mưa \n21C-29C\n</string>
+    <string name="tuesday">Thứ Ba\n</string>
+    <string name="wednesday">Thứ Tư</string>
+    <string name="friday">Thứ Sáu\n</string>
+    <string name="saturday">Thứ Bảy\n</string>
+    <string name="sunday">Chủ Nhật</string>
+    <string name="cloudy">Mây</string>
+    <string name="cloudy_temp">Mây Mù\n26C-30C</string>
+    <string name="sunny">Nắng</string>
+    <string name="sunny_temp">Nắng Nóng\n35C-40C</string>
+    <string name="thunder">Sấm Sét</string>
+    <string name="thunder_temp">Thunder(Nguy Hiểm)\n25C-26C</string>
+    <string name="snow">Tuyết</string>
+    <string name="snow_temp">Snow(rất Lạnh)\n-12C—1C</string>
+    <string name="typhoon_temp">Lốc xoáy(Nguy Hiểm)\n23C-28C</string>
+    <string name="typhoon">Lốc Xoáy\n</string>
+    <string name="windy">Gió To\n</string>
+    <string name="windy_temp">Gió To\n26C-28C</string>
+    <string name="Vietnam">Việt Nam</string>
+</resources>
