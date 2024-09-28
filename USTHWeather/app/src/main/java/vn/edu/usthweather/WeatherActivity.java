@@ -1,6 +1,7 @@
 package vn.edu.usthweather;
 
 import android.annotation.SuppressLint;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -39,9 +40,8 @@ public class WeatherActivity extends AppCompatActivity {
             tab.setText(adapter.getPageTitle(position));
         }).attach();
 
-//        ForecastFragment firstFragment = new ForecastFragment();
-//
-//        getSupportFragmentManager().beginTransaction().replace(R.id.main, firstFragment).commit();
+        MediaPlayer music = MediaPlayer.create(WeatherActivity.this, R.raw.sample);
+        music.start();
     }
 
     @Override
