@@ -6,6 +6,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.Message;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,7 +27,8 @@ import com.google.android.material.tabs.TabLayoutMediator;
 
 public class WeatherActivity extends AppCompatActivity {
     private static final String TAG = "Weather";
-    private Handler handler = new Handler(Looper.getMainLooper());
+    private Handler handler ;
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -40,6 +42,13 @@ public class WeatherActivity extends AppCompatActivity {
 //            return insets;
 //        });
         Log.i(TAG, "Create");
+        handler = new Handler(Looper.getMainLooper()) {
+            @Override
+            public void handleMessage(Message msg) {
+                String content = msg.getData().getString("server-response");
+                Toast.makeText(WeatherActivity.this, content, Toast.LENGTH_LONG).show();
+            }
+        };
 
         HomeFragmentPagerAdapter adapter = new HomeFragmentPagerAdapter(this);
         ViewPager2 viewPager2 = findViewById(R.id.view_pager);
@@ -70,13 +79,14 @@ public class WeatherActivity extends AppCompatActivity {
             Intent intent = new Intent(this, PrefActivity.class);
             this.startActivity(intent);
             return true;
-        } else if(item.getItemId() == R.id.action_refresh){
+        } else if (item.getItemId() == R.id.action_refresh) {
             threadHandler();
             return true;
         } else {
             return super.onOptionsItemSelected(item);
         }
     }
+
     public void threadHandler() {
         Thread backThread = new Thread(new Runnable() {
             @Override
@@ -87,12 +97,14 @@ public class WeatherActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                handler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(WeatherActivity.this, "Refresh.", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                Bundle bundle = new Bundle();
+                bundle.putString("server-response", "From another Thread");
+
+                Message msg = new Message();
+                msg.setData(bundle);
+                handler.sendMessage(msg);
+
+
             }
         });
         backThread.start();
