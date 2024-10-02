@@ -70,4 +70,5 @@
     <string name="refresh_icon">refresh\n</string>
     <string name="three_dots">three dots\n</string>
     <string name="dots">dots</string>
+    <string name="setting">setting</string>
 </resources>

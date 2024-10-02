@@ -2,13 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/refresh"
+        android:id="@+id/action_refresh"
         android:icon="@drawable/refresh"
         android:title="@string/refresh_icon"
         app:showAsAction="ifRoom"/>
     <item
-        android:id="@+id/dots"
-        android:icon="@drawable/dots"
-        android:title="@string/dots"
+        android:id="@+id/action_setting"
+        android:icon="@drawable/setting"
+        android:title="@string/setting"
         app:showAsAction="ifRoom"/>
 </menu>
